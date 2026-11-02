@@ -1,0 +1,5 @@
+.git
+README.md
+scripts/
+k8s/
+*.zip

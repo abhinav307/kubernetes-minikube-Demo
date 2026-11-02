@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-project-site
+  labels:
+    app: kubernetes-project-site
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubernetes-project-site
+  template:
+    metadata:
+      labels:
+        app: kubernetes-project-site
+    spec:
+      containers:
+        - name: project-site
+          image: kubernetes-project-site:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10

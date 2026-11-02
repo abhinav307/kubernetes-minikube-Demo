@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070d1b">
+  <meta name="description" content="A practical project demonstrating how to containerize and deploy an Nginx application on Kubernetes using Minikube.">
+  <title>Kubernetes Project | Minikube Deployment</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Kubernetes Project home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img"><path d="M24 3.8 41.5 14v20L24 44.2 6.5 34V14L24 3.8Z"/><path d="M24 11.4v25.2M13.1 17.7l21.8 12.6M34.9 17.7 13.1 30.3M16.5 11.5l15 25M31.5 11.5l-15 25"/><circle cx="24" cy="24" r="5.2"/></svg>
+      </span>
+      <span>Kubernetes <b>Project</b></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#deployment">Deployment</a>
+      <a class="nav-link" href="#container">Container</a>
+      <a class="nav-link" href="#kubernetes">Kubernetes</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-icon">✦</span> Academic Project <span class="eyebrow-line"></span> Program 12</div>
+        <h1>Deploy a Containerized<br class="desktop-break"> Application using<br class="desktop-break"> <span>Kubernetes (Minikube)</span></h1>
+        <p class="hero-copy">A practical demonstration of deploying, exposing, and scaling a containerized Nginx application on a local Kubernetes cluster.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#deployment"><span class="button-icon">↗</span> View Deployment</a>
+          <a class="button button-secondary" href="#about"><span class="button-icon">▤</span> Project Details</a>
+        </div>
+      </div>
+
+      <div class="workflow-grid" aria-label="Project workflow">
+        <article class="workflow-card">
+          <span class="workflow-icon docker-icon" aria-hidden="true">▰</span>
+          <h3>Containerize<br>Application</h3>
+          <p>Package the app in a container</p>
+        </article>
+        <article class="workflow-card">
+          <span class="workflow-icon kube-icon" aria-hidden="true">⎈</span>
+          <h3>Deploy with<br>Kubernetes</h3>
+          <p>Manage Pods and replicas</p>
+        </article>
+        <article class="workflow-card">
+          <span class="workflow-icon cube-icon" aria-hidden="true">⬡</span>
+          <h3>Run on<br>Minikube</h3>
+          <p>Use a local cluster</p>
+        </article>
+        <article class="workflow-card">
+          <span class="workflow-icon layers-icon" aria-hidden="true">▱</span>
+          <h3>Access the<br>Application</h3>
+          <p>Expose it through a Service</p>
+        </article>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="section-wrap content-section" id="about">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">PROJECT OVERVIEW</p>
+          <h2>From container to <span>running application.</span></h2>
+        </div>
+        <p class="section-intro">The project uses Docker Desktop as the Minikube driver, an Nginx container image, and Kubernetes resources to run and expose the application locally.</p>
+      </div>
+      <div class="overview-grid">
+        <article class="info-panel overview-main">
+          <div class="panel-icon">⌘</div>
+          <h3>Project objective</h3>
+          <p>Deploy the official Nginx container image to a local Kubernetes cluster, expose it with a NodePort Service, verify the running Pods, and scale the Deployment to three replicas.</p>
+          <div class="tag-row"><span class="tag">Windows</span><span class="tag">Docker Desktop</span><span class="tag">Minikube</span><span class="tag">kubectl</span></div>
+        </article>
+        <article class="info-panel objective-card">
+          <div class="small-label">EXPECTED OUTCOME</div>
+          <div class="outcome-number">3<span>/3</span></div>
+          <h3>Pods ready</h3>
+          <p>Three Nginx Pod replicas running successfully.</p>
+          <div class="mini-progress"><span></span></div>
+          <div class="progress-caption"><span>Deployment availability</span><b>100%</b></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="deployment">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">DEPLOYMENT RESULTS</p>
+          <h2>Cluster status at a <span>glance.</span></h2>
+        </div>
+        <span class="recorded-label"><i></i> Recorded project output</span>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Cluster</span><span class="stat-symbol">◉</span></div><div class="stat-value">Ready</div><div class="stat-foot"><i class="status-dot"></i> Minikube node healthy</div></article>
+        <article class="stat-card"><div class="stat-top"><span>Running Pods</span><span class="stat-symbol">▦</span></div><div class="stat-value">03</div><div class="stat-foot"><i class="status-dot"></i> All containers ready</div></article>
+        <article class="stat-card"><div class="stat-top"><span>Deployment</span><span class="stat-symbol">◫</span></div><div class="stat-value">3/3</div><div class="stat-foot"><i class="status-dot"></i> All replicas available</div></article>
+        <article class="stat-card"><div class="stat-top"><span>Service</span><span class="stat-symbol">⇄</span></div><div class="stat-value">NodePort</div><div class="stat-foot">Application port 80</div></article>
+      </div>
+
+      <div class="deployment-grid">
+        <article class="panel terminal-panel">
+          <div class="panel-header"><div><span class="window-dots"><i></i><i></i><i></i></span><b>kubectl get pods</b></div><span class="terminal-caption">PowerShell · output</span></div>
+          <div class="terminal-body">
+            <div class="terminal-line muted">NAME <span>READY</span><span>STATUS</span><span>RESTARTS</span><span>AGE</span></div>
+            <div class="terminal-line"><span>nginx-demo-7f4498898d-47jgk</span><span>1/1</span><span class="green">Running</span><span>0</span><span>10m</span></div>
+            <div class="terminal-line"><span>nginx-demo-7f4498898d-f558w</span><span>1/1</span><span class="green">Running</span><span>0</span><span>59s</span></div>
+            <div class="terminal-line"><span>nginx-demo-7f4498898d-hd7jz</span><span>1/1</span><span class="green">Running</span><span>0</span><span>59s</span></div>
+            <div class="terminal-prompt">PS C:\Users\&lt;user&gt;&gt; <b>kubectl get deployments</b></div>
+            <div class="terminal-line muted"><span>NAME</span><span>READY</span><span>UP-TO-DATE</span><span>AVAILABLE</span><span>AGE</span></div>
+            <div class="terminal-line"><span>nginx-demo</span><span>3/3</span><span>3</span><span class="green">3</span><span>10m</span></div>
+          </div>
+        </article>
+
+        <article class="panel service-panel">
+          <div class="panel-header"><b>Service endpoint</b><span class="service-badge">EXPOSED</span></div>
+          <div class="service-port"><span class="port-icon">↗</span><div><small>Service type</small><strong>NodePort</strong></div></div>
+          <div class="service-details"><div><span>Deployment</span><b>nginx-demo</b></div><div><span>Target port</span><b>80 / TCP</b></div><div><span>NodePort</span><b>Auto-assigned</b></div><div><span>Cluster IP</span><b>Assigned by cluster</b></div></div>
+          <div class="service-note">The Service provides a stable way to reach the Nginx Pods. Minikube opens the local endpoint with <code>minikube service nginx-demo --url</code>.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="container">
+      <div class="section-heading">
+        <div><p class="section-kicker">APPLICATION FLOW</p><h2>How the request <span>reaches Nginx.</span></h2></div>
+        <p class="section-intro">Kubernetes keeps the desired number of replicas running and routes traffic to the Pods selected by the Service.</p>
+      </div>
+      <div class="architecture-panel">
+        <div class="architecture-node client-node"><span class="architecture-icon">⌘</span><b>Browser</b><small>Local user</small></div>
+        <div class="connector"><span>HTTP</span><i></i></div>
+        <div class="architecture-node service-node"><span class="architecture-icon">⇄</span><b>NodePort Service</b><small>Port 80</small></div>
+        <div class="connector"><span>Routes traffic</span><i></i></div>
+        <div class="pods-group"><div class="pods-label">KUBERNETES DEPLOYMENT · 3 REPLICAS</div><div class="pod-nodes"><div class="pod-node"><span>▣</span><b>Pod 1</b><small>Nginx</small></div><div class="pod-node"><span>▣</span><b>Pod 2</b><small>Nginx</small></div><div class="pod-node"><span>▣</span><b>Pod 3</b><small>Nginx</small></div></div></div>
+      </div>
+      <div class="flow-caption"><span class="status-dot"></span> All three replicas were reported as Running in the recorded terminal output.</div>
+    </section>
+
+    <section class="section-wrap content-section" id="kubernetes">
+      <div class="section-heading">
+        <div><p class="section-kicker">COMMAND REFERENCE</p><h2>Steps performed, <span>commands used.</span></h2></div>
+        <p class="section-intro">Run these commands in Windows PowerShell. Start Docker Desktop before creating the Minikube cluster.</p>
+      </div>
+      <div class="commands-list">
+        <article class="command-card"><div class="command-meta"><span>01</span><div><b>Install the tools</b><small>Install Minikube and kubectl using WinGet.</small></div></div><div class="code-wrap"><code>winget install Kubernetes.minikube<br>winget install Kubernetes.kubectl<br>minikube version</code><button class="copy-button" data-copy="winget install Kubernetes.minikube&#10;winget install Kubernetes.kubectl&#10;minikube version">Copy</button></div></article>
+        <article class="command-card"><div class="command-meta"><span>02</span><div><b>Start the local cluster</b><small>Use Docker Desktop as the Minikube driver.</small></div></div><div class="code-wrap"><code>minikube start --driver=docker<br>kubectl get nodes</code><button class="copy-button" data-copy="minikube start --driver=docker&#10;kubectl get nodes">Copy</button></div></article>
+        <article class="command-card"><div class="command-meta"><span>03</span><div><b>Create and expose the application</b><small>Create the Nginx Deployment and a NodePort Service.</small></div></div><div class="code-wrap"><code>kubectl create deployment nginx-demo --image=nginx<br>kubectl expose deployment nginx-demo --type=NodePort --port=80</code><button class="copy-button" data-copy="kubectl create deployment nginx-demo --image=nginx&#10;kubectl expose deployment nginx-demo --type=NodePort --port=80">Copy</button></div></article>
+        <article class="command-card"><div class="command-meta"><span>04</span><div><b>Verify and open the app</b><small>Check the resources and open the service URL.</small></div></div><div class="code-wrap"><code>kubectl get pods<br>kubectl get services<br>minikube service nginx-demo --url</code><button class="copy-button" data-copy="kubectl get pods&#10;kubectl get services&#10;minikube service nginx-demo --url">Copy</button></div></article>
+        <article class="command-card"><div class="command-meta"><span>05</span><div><b>Scale to three replicas</b><small>Increase the Deployment replica count and verify availability.</small></div></div><div class="code-wrap"><code>kubectl scale deployment nginx-demo --replicas=3<br>kubectl get pods<br>kubectl get deployments</code><button class="copy-button" data-copy="kubectl scale deployment nginx-demo --replicas=3&#10;kubectl get pods&#10;kubectl get deployments">Copy</button></div></article>
+      </div>
+      <div class="note-box"><span>!</span><p><b>PATH troubleshooting:</b> If PowerShell reports that <code>minikube</code> is not recognized immediately after installation, open a new terminal so it reloads the updated PATH. If needed, add the Minikube installation folder to your Windows PATH.</p></div>
+    </section>
+
+    <section class="section-wrap content-section glossary-section">
+      <div class="section-heading"><div><p class="section-kicker">KEY CONCEPTS</p><h2>Understand the <span>building blocks.</span></h2></div></div>
+      <div class="glossary-grid">
+        <article class="glossary-card"><b>Kubernetes</b><p>An open-source platform for deploying, scaling, and managing containerized applications.</p></article>
+        <article class="glossary-card"><b>Minikube</b><p>A tool that runs a local Kubernetes cluster for learning and development.</p></article>
+        <article class="glossary-card"><b>kubectl</b><p>The command-line tool used to communicate with and manage a Kubernetes cluster.</p></article>
+        <article class="glossary-card"><b>Pod</b><p>The smallest deployable Kubernetes unit, containing one or more containers.</p></article>
+        <article class="glossary-card"><b>Deployment</b><p>Declares the desired number of Pod replicas and keeps that state maintained.</p></article>
+        <article class="glossary-card"><b>Service</b><p>Provides a stable network endpoint for a selected group of Pods.</p></article>
+        <article class="glossary-card"><b>NodePort</b><p>Exposes a Service on a port of each node in the cluster.</p></article>
+        <article class="glossary-card"><b>Replica</b><p>One running copy of a Pod managed by a Deployment.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-wrap">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark small-mark" aria-hidden="true">⎈</span><span>Kubernetes <b>Project</b></span></a>
+    <p>Deploy a Containerized Application using Kubernetes (Minikube)</p>
+    <a href="#home" class="back-top">Back to top ↑</a>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
